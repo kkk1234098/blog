@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Model\Admin;
 use App\Model\Phone;
+use Illuminate\Support\Facades\Redis;
 
 class RiakController extends Controller
 {
@@ -30,5 +31,9 @@ class RiakController extends Controller
     	
     	$users =Admin::select(DB::raw('admin.*,count(phone.phone) as phoneCount'))->leftJoin('phone','phone.userId','=','admin.id')->groupBy('admin.id')->get()->toArray();
     	dd($users);
+    }
+    //redis
+    public function redis(){
+    	echo Redis::get('name');
     }
 }

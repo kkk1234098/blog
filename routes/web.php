@@ -18,3 +18,4 @@ use App\Http\Controllers\Controller;
 Route::get('/', 'RiakController@index');
 Route::get('/riak/user/{id}.html','RiakController@index2');
 Route::get('/show_users', 'RiakController@show_users');
+Route::get('/redis', 'RiakController@redis');
