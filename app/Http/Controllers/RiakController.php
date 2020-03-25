@@ -34,6 +34,7 @@ class RiakController extends Controller
     }
     //redis
     public function redis(){
-    	echo Redis::get('name');
+    	 Redis::set('names','hhc');
+    	 echo Redis::get('name');
     }
 }
