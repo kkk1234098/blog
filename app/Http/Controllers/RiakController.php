@@ -14,7 +14,7 @@ class RiakController extends Controller
 {
     //
     public function index(DemoInterface $demo){
-    	
+    	phpinfo();die;
     	//dd($demo->demo1());
     	$users=DB::table('user_admin')->get();
     	return view('user.index', ['users' => $users]);
